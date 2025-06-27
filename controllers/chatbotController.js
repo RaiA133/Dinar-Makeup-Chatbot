@@ -3,6 +3,7 @@ import { askChat } from '../services/chatService.js';
 const chatbotController = {
   async index(req, res, next) {
     const { message } = req.body;
+    console.log('message', message);
     if (!message) return res.status(400).json({ error: 'Field "message" dibutuhkan' });
   
     try {
