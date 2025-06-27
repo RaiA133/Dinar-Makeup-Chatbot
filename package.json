@@ -1,16 +1,25 @@
 {
-  "name": "ai-vertex-express",
+  "name": "dinar-makeup-chatbot",
   "version": "1.0.0",
+  "description": "- to start the app you need to authenticate using vertex ai - vertex ai doesnt use api-key instead its using Service Accounts using gcloud CLI & Application Default Credentials (ADC) - to authenticate you need to install gcloud | docs : https://cloud.google.com/sdk/docs/install - after install gcloud run 'gcloud init' and setup your account with same GCP account with VERTEX AI enable - you can configure vertex ai with RAG or other method to make the LLM learn if you have spesific data - run 'gcloud auth application-default login' to initiate 'gcloud init' - lastly you can run the app by using 'yarn run dev'",
   "main": "app.js",
-  "author": "Raie Aswajjillah",
-  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "node --watch app.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaiA133/urban-computing-machine.git"
+  },
+  "author": "Raie Aswajjillah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaiA133/urban-computing-machine/issues"
+  },
+  "homepage": "https://github.com/RaiA133/urban-computing-machine#readme",
   "dependencies": {
     "@google/genai": "^1.7.0",
-    "dotenv": "^16.6.0",
+    "dotenv": "^16.6.1",
     "express": "^5.1.0"
   }
 }
