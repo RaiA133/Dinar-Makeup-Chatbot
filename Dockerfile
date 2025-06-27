@@ -1,17 +1,19 @@
-ENV GOOGLE_APPLICATION_CREDENTIALS=/tmp/sa-key.json
-COPY start.sh /start.sh
-COPY . .
-RUN chmod +x /start.sh
-CMD ["/start.sh"]
-
+# ⚠️ Baris pertama harus FROM
 FROM node:20
 
-WORKDIR /app
+# Set environment variable untuk credentials Google
+ENV GOOGLE_APPLICATION_CREDENTIALS=/tmp/sa-key.json
 
-COPY package*.json ./
-RUN npm install
+# Copy script startup
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
 
+# Copy semua file source code
 COPY . .
 
-CMD ["npm", "start"]
+# Install dependencies
+RUN npm install
+# atau RUN yarn install jika kamu pakai yarn
 
+# Jalankan startup script
+CMD ["/start.sh"]
