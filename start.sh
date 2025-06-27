@@ -1,3 +1,5 @@
-#!/bin/sh
+# Simpan Google credentials ke file
 echo "$GOOGLE_APPLICATION_CREDENTIALS_JSON" > /tmp/sa-key.json
-node dist/index.js
+
+# Jalankan aplikasi
+node index.js

@@ -3,6 +3,7 @@ FROM node:20
 ENV GOOGLE_APPLICATION_CREDENTIALS=/tmp/sa-key.json
 
 WORKDIR /app
+
 COPY package*.json ./
 RUN npm install
 
