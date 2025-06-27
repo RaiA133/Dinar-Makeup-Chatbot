@@ -1,0 +1,7 @@
+- to start the app you need to authenticate using vertex ai
+- vertex ai doesnt use api-key instead its using Service Accounts using gcloud CLI & Application Default Credentials (ADC)
+- to authenticate you need to install gcloud | docs : https://cloud.google.com/sdk/docs/install
+- after install gcloud run 'gcloud init' and setup your account with same GCP account with VERTEX AI enable
+- you can configure vertex ai with RAG or other method to make the LLM learn if you have spesific data
+- run 'gcloud auth application-default login' to initiate 'gcloud init'
+- lastly you can run the app by using 'yarn run dev'
