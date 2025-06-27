@@ -21,6 +21,9 @@ const chatbotController = {
         error
       })
     }
+  },
+  async healthCheck(req, res, next) {
+    res.send('PONG')
   }
 }
 
