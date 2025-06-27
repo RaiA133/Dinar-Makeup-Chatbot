@@ -1,19 +1,16 @@
-# ⚠️ Baris pertama harus FROM
-FROM node:20
+# Build stage
+FROM node:20 AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
 
-# Set environment variable untuk credentials Google
+# Runtime stage
+FROM node:20 AS runtime
+WORKDIR /app
 ENV GOOGLE_APPLICATION_CREDENTIALS=/tmp/sa-key.json
-
-# Copy script startup
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
-
-# Copy semua file source code
-COPY . .
-
-# Install dependencies
-RUN npm install
-# atau RUN yarn install jika kamu pakai yarn
-
-# Jalankan startup script
+COPY --from=build /app ./
 CMD ["/start.sh"]
