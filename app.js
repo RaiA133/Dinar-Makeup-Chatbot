@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors'
 dotenv.config();
 
-const whitelist = ['http://localhost:5173', 'https://dinar-makeup-chatbot-production.up.railway.app'];
+const whitelist = ['http://localhost:5173', 'https://ai-dinar-makeup-official-website.vercel.app'];
 
 const corsOptions = {
   origin: function (origin, callback) {
