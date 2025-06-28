@@ -1,6 +1,5 @@
-FROM node:20
 
-ENV GOOGLE_APPLICATION_CREDENTIALS=/tmp/sa-key.json
+FROM node:20
 
 WORKDIR /app
 
@@ -9,7 +8,5 @@ RUN npm install
 
 COPY . .
 
-COPY start.sh /start.sh
-RUN chmod +x /start.sh
+CMD ["npm", "start"]
 
-CMD ["/start.sh"]
