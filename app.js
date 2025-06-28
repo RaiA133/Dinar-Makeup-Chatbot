@@ -1,11 +1,25 @@
 import express from 'express'
 import routes from './routers/index.js'
 import dotenv from 'dotenv';
+import cors from 'cors'
 dotenv.config();
+
+const whitelist = ['http://localhost:5173', 'https://dinar-makeup-chatbot-production.up.railway.app'];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || whitelist.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}
 
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.use(cors(corsOptions))
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 

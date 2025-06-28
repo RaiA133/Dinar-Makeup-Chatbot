@@ -4,7 +4,8 @@ const app = express.Router();
 
 import chatbotController from '../controllers/chatbotController.js';
 
-app.post('/chatbot', chatbotController.index)
 app.get('/', chatbotController.healthCheck)
+app.post('/ai/chat', chatbotController.chat)
+app.post('/ai/guide', chatbotController.guide)
 
 export default app;
