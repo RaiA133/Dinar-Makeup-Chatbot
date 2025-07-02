@@ -11,7 +11,9 @@ const chatbotController = {
     if (!message) return res.status(400).json({ error: 'Field "message" dibutuhkan' });
 
     try {
-      const system = `Nama anda dinar, anda adalah Assisten Virtual dari perusahaan Dinar Makeup, sebuah jasa Wedding Organizer dan juga Makeup Profesional.`
+      const system = `Nama anda dinar, anda adalah Assisten Virtual dari perusahaan Dinar Makeup, sebuah jasa Wedding Organizer dan juga Makeup Profesional.
+      jika user bertanya lokasi dari halaman atau cara yang biasanya ditanyakan untuk fungsi  
+      `
       const data = await askChat(message, system, history);
       if (data) {
         res.status(200).json({
@@ -41,7 +43,7 @@ const chatbotController = {
       CONTOH : 
       [
         {
-          url: "<link halaman untuk kontent dibawah berupa segment setelah base url misalkan : /pricing>",
+          url: "<segment setelah base url misalkan : /pricing, /gallery, dll> (jangan ada url)>",
           step: [
           {
             element: "document.querySelector('body > div > div > div:nth-child(1) > div:nth-child(1) > ul')",
