@@ -69,7 +69,6 @@ const chatbotController = {
       NOTE : 
       - isi semua element nantinya akan dimasukan kedalam document.querySelector(),
       jadi pastikan element isinya bisa dibacar oleh document.querySelector().
-      - isi semua element tidak boleh menggandung class dengan tanda ":" . misalkan ".sm:..." , ".md:..." , dll. jangan sertakan class ini
       - url harus sesuaikan dengan semua data url yg ada, jangan beri segment yang tidak ada di semua link halaman webstite
 
       HASIL JSON DIATAS AKAN DIPAKAI DISINI :
