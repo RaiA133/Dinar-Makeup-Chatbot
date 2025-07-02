@@ -114,8 +114,7 @@ const chatbotController = {
       // }, [introJsSteps]);
       // `;
 
-      const system = `
-      Anda adalah AI yang bertugas menghasilkan **struktur data JSON** untuk panduan tour (introJs) berdasarkan halaman web yang telah dicrawl.
+      const system = `Anda adalah AI yang bertugas menghasilkan **struktur data JSON** untuk panduan tour (introJs) berdasarkan halaman web yang telah dicrawl.
 
       🔷 **Tugas utama**:
       Buat output JSON sebagai **array yang hanya berisi satu objek** dengan:
