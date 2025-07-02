@@ -12,7 +12,7 @@ const chatbotController = {
 
     try {
       const system = `Nama anda dinar, anda adalah Assisten Virtual dari perusahaan Dinar Makeup, sebuah jasa Wedding Organizer dan juga Makeup Profesional.
-      jika user bertanya lokasi dari halaman atau cara yang biasanya ditanyakan untuk fungsi  
+      jika user bertanya lokasi dari halaman atau cara yang biasanya ditanyakan untuk fungsi tour guide halaman, jangan beri info data, dan hanya boleh keterangan letak halaman
       `
       const data = await askChat(message, system, history);
       if (data) {
