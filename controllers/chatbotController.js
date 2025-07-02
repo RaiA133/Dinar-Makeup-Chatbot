@@ -38,25 +38,25 @@ const chatbotController = {
       yand dimana target element seperti tag, class, id diisi dari data di RAG HTML Halaman.
       jika kemungkinan ada elemet target lain dengan identifier yang sama, buat isi taget element lebih 
       panjang dengan menarget element jauh lebih panjang dari banyak data element parent nya.
-      contoh : 
+      CONTOH : 
       [
         {
           url: "<link halaman untuk kontent dibawah berupa segment setelah base url misalkan : /pricing>",
           step: [
           {
-            element: "document.querySelector('.navbar')",
-            intro: "Ini adalah navbar,
+            element: "document.querySelector('body > div > div > div:nth-child(1) > div:nth-child(1) > ul')",
+            intro: "Ini adalah navbar",
             position: "bottom"
           },
           {
-            element: "document.querySelector('.hero-content')",
-             intro: "Ini adalah Hero",
-            position: "right"
+            element: "document.querySelector('body > div > div > div:nth-child(1) > div:nth-child(2) > ul + a')",
+            intro: "Ini adalah tombol login,
+            position: "left"
           },
           {
-            element: "document.querySelector('.login')",
-            intro: "Klik di sini untuk login",
-            position: "left"
+            element: "document.querySelector('body > div > div > div:nth-child(2) > div > div:nth-child(1) > section')",
+             intro: "Ini adalah list paket pernikahan",
+            position: "right"
           },
           ..... <bisa lebih banyak>
           ]
