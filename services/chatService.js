@@ -50,9 +50,9 @@ export async function askChat(message, system, history = []) {
 
   const generationConfig = {
     maxOutputTokens: 65535,
-    temperature: 1,
-    topP: 1,
-    seed: 0,
+    temperature: 0.2,              // output deterministik
+    topP: 0.8,                      // validasi konteks
+    seed: 42,                      // agar output konsisten
     safetySettings: [
       {
         category: 'HARM_CATEGORY_HATE_SPEECH',
@@ -60,7 +60,7 @@ export async function askChat(message, system, history = []) {
       },
       {
         category: 'HARM_CATEGORY_DANGEROUS_CONTENT',
-        threshold: 'OFF',
+        threshold: 'BLOCK_NONE',
       },
       {
         category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT',
@@ -68,7 +68,7 @@ export async function askChat(message, system, history = []) {
       },
       {
         category: 'HARM_CATEGORY_HARASSMENT',
-        threshold: 'OFF',
+        threshold: 'BLOCK_NONE',
       }
     ],
     tools: [
