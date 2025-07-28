@@ -5,7 +5,9 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "start": "node --watch app.js"
+    "start": "node --watch app.js",
+    "build": "echo 'No build step needed for Express app'"
+    
   },
   "repository": {
     "type": "git",
